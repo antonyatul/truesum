@@ -3,3 +3,4 @@ pandas>=3.0,<3.1
 numpy>=2.2,<3
 plotly>=7.1,<8
 openpyxl>=3.1,<4
+defusedxml>=0.7  # openpyxl uses it to block malicious XML in .xlsx uploads
