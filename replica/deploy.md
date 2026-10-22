@@ -76,4 +76,14 @@ provider, tightened to `quarantine` once reports are clean).
 
 ## Live URL
 
-_to be filled in after step 4_
+**https://truesum.streamlit.app/** (deployed 2026-10-22 from `antonyatul/truesum` `main`).
+
+### Checked on the live site (2026-10-22, in the Claude desktop browser at ~800 px)
+
+| check | result |
+| --- | --- |
+| app loads, Truesum branding and favicon | ✅ |
+| sample data → recommended clean → sales analysis | ✅ same totals as local (revenue 1,838,524.11, profit 876,824.33, margin 48.5%) |
+| findings and warnings | ✅ shown |
+| browser console | only Streamlit Cloud's own calls: `api/v2/user/details` 404 (anonymous visitor) and `api/v1/app/event/open` 403 (its visitor counter). No app errors. |
+| **found:** metric numbers broke mid-number at ~800 px | fixed (BUG-11), pushed, tablet width added to the browser test |

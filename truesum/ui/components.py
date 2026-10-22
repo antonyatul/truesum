@@ -45,6 +45,18 @@ def metric(label: str, value: str, hint: str | None = None) -> None:
     )
 
 
+def _metric_html(label: str, value: str, hint: str | None) -> str:
+    hint_html = f'<div class="hint">{html.escape(hint)}</div>' if hint else ""
+    return (f'<div class="sl-metric"><div class="label">{html.escape(label)}</div>'
+            f'<div class="value">{html.escape(value)}</div>{hint_html}</div>')
+
+
+def metric_row(cards: list[tuple[str, str, str | None]]) -> None:
+    """Metric cards in a grid that wraps (4 → 2 → 1 per row) instead of squeezing numbers."""
+    st.markdown('<div class="sl-metric-row">' + "".join(_metric_html(*c) for c in cards) + "</div>",
+                unsafe_allow_html=True)
+
+
 def tier_badge(tier: str) -> str:
     """HTML for a tier badge; colour is always paired with a word and a glyph."""
     cls = tier.lower()

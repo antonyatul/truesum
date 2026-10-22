@@ -100,6 +100,10 @@ def run(width: int, height: int, suffix: str) -> list[str]:
         settle(page)
         expect(page.get_by_text("Performance tiers")).to_be_visible()
         expect(page.get_by_text("50 rows have no cost")).to_be_visible()
+        fits = page.evaluate("() => [...document.querySelectorAll('.sl-metric .value')]"
+                             ".every(v => v.scrollWidth <= v.clientWidth + 1 && v.getBoundingClientRect().height < 50)")
+        if not fits:
+            errors.append(f"S07 at {width}px: a metric number overflows or wraps inside its card")
         page.get_by_role("button", name="Add to report").first.click()
         settle(page)
         shot(page, f"S07-sales{suffix}")
@@ -136,7 +140,7 @@ def run(width: int, height: int, suffix: str) -> list[str]:
 
 
 if __name__ == "__main__":
-    problems = run(1440, 1000, "") + run(390, 900, "-mobile")
+    problems = run(1440, 1000, "") + run(820, 1000, "-tablet") + run(390, 900, "-mobile")
     for p_ in problems:
         print("PROBLEM:", p_)
     print("OK" if not problems else f"{len(problems)} problem(s)")

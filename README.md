@@ -4,6 +4,8 @@
 <p align="center"><b>Your sales spreadsheet, explained in plain English.</b><br>
 Truesum checks the maths, rates every sale on profit, and hands you back a workbook you can keep in Excel.</p>
 
+<p align="center"><b><a href="https://truesum.streamlit.app/">Try it live → truesum.streamlit.app</a></b></p>
+
 <p align="center"><a href="#run-it-yourself">Run it yourself</a> · <a href="#how-it-works">How it works</a> · <a href="#whats-under-the-hood">Under the hood</a></p>
 
 ![The Sales performance page: totals, a "What stands out" box in plain sentences, and profit tiers](docs/sales.png)

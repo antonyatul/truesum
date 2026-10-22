@@ -12,15 +12,12 @@ st.title("Overview & clean")
 st.caption(f"{s.name} · {'cleaned' if s.cleaned else 'original data, not cleaned yet'}")
 
 ov = profile.overview(df)
-c = st.columns(4)
-with c[0]:
-    ui.metric("Rows", f"{ov['rows']:,}")
-with c[1]:
-    ui.metric("Columns", f"{ov['columns']}")
-with c[2]:
-    ui.metric("Missing cells", f"{ov['missing_pct']:.1f}%", f"{ov['missing_cells']:,} cells")
-with c[3]:
-    ui.metric("Duplicate rows", f"{ov['duplicate_rows']:,}")
+ui.metric_row([
+    ("Rows", f"{ov['rows']:,}", None),
+    ("Columns", f"{ov['columns']}", None),
+    ("Missing cells", f"{ov['missing_pct']:.1f}%", f"{ov['missing_cells']:,} cells"),
+    ("Duplicate rows", f"{ov['duplicate_rows']:,}", None),
+])
 
 # ---- cleaning ---------------------------------------------------------------
 st.header("Clean")

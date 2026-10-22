@@ -28,15 +28,12 @@ else:
 n = c.slider("How many to show", 5, 50, 10, step=5, key="cust_n")
 
 table, stats = customers.repeat_customers(df, customer)
-k = st.columns(4)
-with k[0]:
-    ui.metric("Customers", f"{stats['customers']:,}")
-with k[1]:
-    ui.metric("Came back", f"{stats['repeat_pct']:.1f}%", f"{stats['repeat_customers']:,} customers")
-with k[2]:
-    ui.metric("Orders from returners", f"{stats['orders_from_repeat_pct']:.1f}%")
-with k[3]:
-    ui.metric("Orders per customer", f"{len(df) / max(stats['customers'], 1):.1f}", "average")
+ui.metric_row([
+    ("Customers", f"{stats['customers']:,}", None),
+    ("Came back", f"{stats['repeat_pct']:.1f}%", f"{stats['repeat_customers']:,} customers"),
+    ("Orders from returners", f"{stats['orders_from_repeat_pct']:.1f}%", None),
+    ("Orders per customer", f"{len(df) / max(stats['customers'], 1):.1f}", "average"),
+])
 
 left, right = st.columns(2, gap="large")
 with left:

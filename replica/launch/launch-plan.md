@@ -6,8 +6,8 @@ people trying it** to learn whether the product route is worth building.
 
 ## Before launch (this week)
 
-- [ ] **Deploy** to Streamlit Community Cloud (`/replica-deploy`). Live URL in the README hero.
-- [ ] **Repo** public as `antonyatul/truesum`; description and topics from `listing.json`; pin it
+- [x] **Deploy** to Streamlit Community Cloud: https://truesum.streamlit.app/ (README hero links it).
+- [x] **Repo** public as `antonyatul/truesum`; description and topics from `listing.json`; pin it
       on the GitHub profile.
 - [ ] **Run the name checks** marked "to run" in `brand.md` (UK IPO first) before buying a domain.
 - [ ] **Feedback route:** a GitHub issue template "Something looked wrong in my numbers". No email
@@ -44,8 +44,8 @@ No paid ads, no review swaps, no invented numbers.
 >
 > Behind it: pandas, Plotly, 100+ automated tests, an accessibility scan, and CI on every push.
 >
-> Free to try, nothing is stored: [live link]
-> Code: [GitHub link]
+> Free to try, nothing is stored: https://truesum.streamlit.app/
+> Code: https://github.com/antonyatul/truesum
 >
 > If you work with sales data in spreadsheets, I'd value 5 minutes of feedback on what it gets wrong.
 >

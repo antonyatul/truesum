@@ -30,6 +30,17 @@ S2 feature broken, S3 broken with a workaround or visibly wrong, S4 cosmetic.
 - **Actual:** `st.subheader` renders h3 directly under the page h1; axe `heading-order` (moderate).
 - **Fix:** sections use `st.header` (h2), restyled to subheading size.
 
+## Found on the live site
+
+### BUG-11 · S3 · Metric numbers break mid-number at tablet widths — fixed
+- **Steps:** open the live app in a window about 800 px wide, load sample data, clean, run the sales analysis.
+- **Expected:** "1,838,524.11" on one line in its card.
+- **Actual:** split as "1,838,5 / 24.11" because four Streamlit columns squeeze each card to ~110 px.
+- **Why tests missed it:** the browser test only ran at 1440 px and 390 px (where cards stack).
+- **Fix:** metric cards render as one CSS grid that wraps 4 → 2 → 1 per row (`ui.metric_row`), numbers never wrap.
+  Verified at 390, 700, 800, 900, 1024, 1280 and 1440 px. Regression check added to `tests/e2e/flow.py`
+  with a new 820 px run; the check was shown to fail when an overflow is forced.
+
 ## Upstream (Streamlit's own markup; can't be fixed in the app)
 
 | item | impact | note |

@@ -70,21 +70,14 @@ if r is None:
 
 # ---- results ----------------------------------------------------------------
 t = r.totals
-cards = st.columns(4)
-with cards[0]:
-    ui.metric("Revenue", money(t["revenue"]), f"{int(t['rows']):,} rows")
+cards = [("Revenue", money(t["revenue"]), f"{int(t['rows']):,} rows")]
 if r.metric == "profit":
-    with cards[1]:
-        ui.metric("Profit", money(t["profit"]), f"{int(t['loss_rows']):,} rows made a loss")
-    with cards[2]:
-        ui.metric("Margin", f"{t['margin_pct']:.1f}%", "profit ÷ revenue, rows with a cost")
+    cards += [("Profit", money(t["profit"]), f"{int(t['loss_rows']):,} rows made a loss"),
+              ("Margin", f"{t['margin_pct']:.1f}%", "profit ÷ revenue, rows with a cost")]
 else:
-    with cards[1]:
-        ui.metric("Profit", "—", "Map a cost column to see profit")
-    with cards[2]:
-        ui.metric("Margin", "—", "Needs a cost column")
-with cards[3]:
-    ui.metric("Not rated", f"{int(t['unrated_rows']):,}", "rows with no value to rate")
+    cards += [("Profit", "—", "Map a cost column to see profit"), ("Margin", "—", "Needs a cost column")]
+cards.append(("Not rated", f"{int(t['unrated_rows']):,}", "rows with no value to rate"))
+ui.metric_row(cards)
 
 facts = findings.findings(r)
 if facts:

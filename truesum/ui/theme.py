@@ -89,8 +89,12 @@ button[kind="primary"] *, button[kind="primaryFormSubmit"] *,
 }
 .sl-metric .label { color: var(--color-text-muted); font-size: var(--text-xs); font-weight: var(--weight-xs);
   text-transform: uppercase; letter-spacing: .04em; }
+.sl-metric-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3);
+  margin-bottom: var(--space-3); }
+.sl-metric-row .sl-metric { margin-bottom: 0; }
+/* numbers never break mid-number; the grid wraps cards before they get too narrow */
 .sl-metric .value { color: var(--color-text); font-size: var(--text-metric); line-height: var(--leading-metric);
-  font-weight: var(--weight-metric); font-variant-numeric: tabular-nums; margin-top: var(--space-1); }
+  font-weight: var(--weight-metric); font-variant-numeric: tabular-nums; margin-top: var(--space-1); white-space: nowrap; }
 .sl-metric .hint { color: var(--color-text-muted); font-size: var(--text-xs); margin-top: var(--space-1); }
 
 /* tier badge: colour + text + shape, never colour alone */
