@@ -1,0 +1,39 @@
+feature,area,priority,original,clone,notes
+Upload CSV,ingest,must,Hub S01,yes,
+Upload Excel (.xlsx),ingest,must,Hub load_data + Tool BaseProcessor,yes,first sheet only
+Upload size limit and friendly error,ingest,must,none,yes,50 MB / 500k rows; encoding + delimiter sniffing
+Load demo dataset,ingest,should,Tool raw_data,yes,"new synthetic 5,000-row dataset (scripts/make_sample.py) instead of the unconfirmed 100k file"
+No-dataset gate,ingest,must,Hub S06,yes,
+Summary statistics table,explore,must,Hub S02,yes,split into number and text/date tabs
+Missing values table,explore,must,Hub S02,yes,
+Text dataset summary,explore,should,Hub S03,yes,"renamed; labelled as rule-based, not AI (B10)"
+Clean: trim text and coerce numbers,clean,must,Hub clean_data,yes,pandas 3 safe (B6)
+Clean: standardise column names,clean,must,Tool Cleaner.clean_columns,yes,
+Clean: missing-value strategy,clean,must,Hub ffill/bfill + Tool fill 0,yes,per-column choice; recommended leaves numbers blank (B2)
+Clean: drop duplicates,clean,must,Hub clean_data,yes,
+Clean: drop invalid negative rows,clean,should,Tool filter_invalid_rows,yes,user picks columns; refunds kept by default
+Cleaning audit log,clean,should,Tool Logger,yes,in-app step list + report section
+Column mapping for sales fields,sales,must,none (hard-coded in Tool),yes,auto-guessed from headers (B3)
+Profit calculation,sales,must,Tool calculate_profit,yes,revenue - cost x quantity when per unit (B1)
+Quantile performance tiers,sales,must,Tool categorize_sales,yes,
+Threshold summary table,sales,must,Tool export_threshold_summary,yes,
+Profit distribution chart with Q25/Q75/mean,sales,must,Tool plot_profit_thresholds,yes,"Plotly, pre-binned, staggered labels"
+Sales vs profit scatter,sales,should,Tool plot_sales_vs_profit,yes,"sampled to 5,000, tier shapes"
+Top performers table + export,sales,must,Tool filter_top_performers,yes,
+Top customers,customers,should,Hub S02,yes,"own page, unique widget keys (B5)"
+Repeat customers,customers,should,Hub S02,yes,
+Histogram,charts,must,Hub S04,yes,pre-binned
+Bar chart,charts,must,Hub S04,yes,"aggregated, top 20"
+Pie chart,charts,should,Hub S04,yes,"donut, top 9 + Other"
+Scatter plot,charts,must,Hub S04,yes,sampled
+Correlation matrix,charts,should,Hub S04,yes,
+Trend line (rolling mean),charts,should,Hub S04,yes,day/week/month totals or averages with optional rolling-average line
+Save chart to report,report,must,Hub S04,yes,plus reorder and remove
+Download cleaned CSV,report,must,Hub S05,yes,
+Self-contained HTML report,report,must,Hub generate_html,yes,"in memory, lazy download, ~5 MB (B8)"
+Report includes sales tiers and audit log,report,should,none,yes,new
+Branded header with working logo,ui,should,Hub hero,yes,base64 embedded (B7); logo itself goes to replica-brand
+Active-tab nav,ui,could,Hub nav,yes,st.navigation sidebar
+Real AI narrative summary,explore,could,none,no,could; needs an API key and a cost decision
+User accounts and saved datasets,platform,could,none,no,v2; schema ready in replica/schema.sql
+Windows os.startfile output folder,platform,skip,Tool main.py,skip,not applicable
