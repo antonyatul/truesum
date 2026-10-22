@@ -2,9 +2,9 @@
 import pandas as pd
 import streamlit as st
 
-from smartlytics.core import cleaning, profile
+from smartlytics.core import checks, cleaning, io, profile, sales
 from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import require_data, table_config
+from smartlytics.ui.widgets import next_steps, require_data, table_config
 
 s = require_data()
 df = s.df
@@ -90,6 +90,30 @@ with st.expander("Fine-tune: missing values and negative rows", icon=":material/
         s.replace_data(new_df, [entry])
         st.rerun()
 
+# ---- data checks ------------------------------------------------------------
+st.header("Check the maths")
+mapping = s.mapping or sales.guess_mapping(df)
+if not mapping.revenue:
+    st.caption("Data checks need a numeric revenue column. Clean the data or set columns on the Sales page.")
+else:
+    found = checks.run_checks(df, mapping)
+    problems = [c for c in found if not c.passed]
+    if not found:
+        st.caption("No columns here that the checks know how to test.")
+    elif not problems:
+        st.success(f"All {len(found)} checks passed.", icon=":material/verified:")
+    else:
+        st.write(f"{len(problems)} of {len(found)} checks found rows worth a look. Nothing has been changed; "
+                 "these are for you to judge.")
+    if found:
+        st.dataframe(checks.summary(found), hide_index=True, use_container_width=True, column_config={
+            "rows flagged": st.column_config.NumberColumn(format="localized"),
+            "rows checked": st.column_config.NumberColumn(format="localized")})
+        if problems:
+            flagged = pd.concat([c.rows.assign(failed_check=c.name) for c in problems], ignore_index=True)
+            st.download_button("Download flagged rows (CSV)", lambda: io.to_csv_bytes(flagged), "flagged_rows.csv",
+                               mime="text/csv", key="dl_flagged", icon=":material/download:")
+
 # ---- explore ----------------------------------------------------------------
 st.header("Explore")
 t1, t2, t3, t4, t5 = st.tabs(["Summary", "Number columns", "Text and date columns", "Missing values", "Data"])
@@ -120,3 +144,5 @@ with t5:
     st.dataframe(df.head(1000), hide_index=True, use_container_width=True, column_config=table_config(df))
     dtypes = pd.DataFrame({"column": df.columns, "read as": [profile.column_types(df)[c] for c in df.columns]})
     st.dataframe(dtypes, hide_index=True)
+
+next_steps("pages/overview.py")

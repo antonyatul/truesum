@@ -5,7 +5,8 @@ python scripts/make_sample.py  ->  sample_data/sales_sample.csv
 Shape mirrors a typical retail sales export: per-unit cost and price, a discount,
 gross sales and net revenue. Deliberately messy so cleaning has work to do:
 ~1% missing cost, ~0.5% missing product, some exact duplicate rows, a few
-returns (negative quantity and revenue) and inconsistent whitespace/case.
+returns (negative quantity and revenue), inconsistent whitespace/case, and 25 gross
+sales figures typed ten times too large.
 """
 from __future__ import annotations
 
@@ -88,6 +89,13 @@ def build() -> pd.DataFrame:
     df.loc[messy, "Region"] = df.loc[messy, "Region"].map(lambda r: f"  {r.lower()} ")
     dupes = df.sample(40, random_state=SEED)
     df = pd.concat([df, dupes]).sort_values("Order Date", kind="stable").reset_index(drop=True)
+
+    # typing mistakes in Gross Sales on 25 rows that aren't duplicated, so the data checks
+    # have something to find. Separate RNG so nothing above changes.
+    rng2 = np.random.default_rng(SEED + 1)
+    candidates = df.index[~df.duplicated(keep=False) & (df["Quantity"] > 0)]
+    typo = rng2.choice(candidates, 25, replace=False)
+    df.loc[typo, "Gross Sales"] = (df.loc[typo, "Gross Sales"] * 10).round(2)
     return df
 
 

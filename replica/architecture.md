@@ -151,7 +151,7 @@ webhook for subscription status (idempotent on event id).
 ## 5. The parts that bite
 
 - **File size / memory:** Community Cloud gives ~1 GB RAM. Limit uploads to 50 MB
-  and 500,000 rows; read once, keep one cleaned copy plus the raw copy.
+  and 250,000 rows (lowered from 500,000 after measuring ~600 MB peak at 500k); read once, keep one cleaned copy plus the raw copy.
 - **Plot size:** 100k-point scatter or raw bar charts freeze the browser and bloat the
   report. Sample scatters, aggregate bars, cap pie slices.
 - **Report size:** embed Plotly JS once, not per chart (the Hub embeds it per chart:

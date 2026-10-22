@@ -1,9 +1,9 @@
 """S07 Sales performance: column mapping, profit, tiers, top performers."""
 import streamlit as st
 
-from smartlytics.core import charts, io, profile, sales
+from smartlytics.core import charts, findings, io, profile, sales
 from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import chart_style, money, require_data, show_chart, table_config
+from smartlytics.ui.widgets import chart_style, money, next_steps, require_data, show_chart, table_config
 
 s = require_data()
 df = s.df
@@ -65,6 +65,7 @@ with st.expander("Which columns are which?", expanded=s.result is None, icon=":m
 r = s.result
 if r is None:
     ui.empty_state("No analysis yet", "Check the column choices above and press Run analysis.")
+    next_steps("pages/sales.py")
     st.stop()
 
 # ---- results ----------------------------------------------------------------
@@ -84,6 +85,13 @@ else:
         ui.metric("Margin", "—", "Needs a cost column")
 with cards[3]:
     ui.metric("Not rated", f"{int(t['unrated_rows']):,}", "rows with no value to rate")
+
+facts = findings.findings(r)
+if facts:
+    with st.container(border=True):
+        st.markdown("**What stands out**")
+        st.markdown("\n".join(f"- {f}" for f in facts))
+        st.caption("Worked out from your data with fixed rules, not guessed by AI.")
 
 for w in r.warnings:
     st.warning(w, icon=":material/info:")
@@ -135,3 +143,4 @@ show = top.head(500).copy()
 st.dataframe(show, hide_index=True, use_container_width=True, column_config=table_config(show))
 st.download_button("Download top performers (CSV)", lambda: io.to_csv_bytes(top), "top_performers.csv",
                    mime="text/csv", key="dl_top", icon=":material/download:")
+next_steps("pages/sales.py")

@@ -1,0 +1,11 @@
+{
+  "slow or crashes on large data": ["slow", "lag", "freez", "crash", "hang", "memory", "large data", "large files", "massive data", "file size", "too big", "takes forever", "sluggish", "huge"],
+  "learning curve / needs an expert": ["learning curve", "learn", "advanced user", "technical knowledge", "intermediate", "programmer", "wizard", "beginner", "remember", "get lost", "overwhelm", "training", "analyst role", "skills", "lot of features"],
+  "errors hard to spot or trace": ["error", "troubleshoot", "debug", "unnoticed", "bug", "trace", "#ref", "one mistake", "crazy excel model", "messy"],
+  "building reports and metrics is hard work": ["setting up reports", "report", "dashboard", "metric", "chart type", "visuali", "setup takes", "set up"],
+  "sharing, collaboration, handover": ["collaborat", "version", "sync", "lock", "publish", "hand over", "handover", "co-author", "shared"],
+  "mobile and web versions weak": ["mobile", "phone", "web version", "web app", "mac"],
+  "cost and subscriptions": ["price", "pricing", "cost\\b", "subscription", "licen", "expensive", "pay for"],
+  "can't trust the numbers": ["stale", "unreliable", "verify", "questionable", "guess", "assumption"],
+  "wants guidance from own data": ["guidance", "ai help", "real numbers", "solid data", "look forward", "insight", "unique selling", "chatbot"]
+}

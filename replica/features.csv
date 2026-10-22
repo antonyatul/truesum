@@ -37,3 +37,9 @@ Active-tab nav,ui,could,Hub nav,yes,st.navigation sidebar
 Real AI narrative summary,explore,could,none,no,could; needs an API key and a cost decision
 User accounts and saved datasets,platform,could,none,no,v2; schema ready in replica/schema.sql
 Windows os.startfile output folder,platform,skip,Tool main.py,skip,not applicable
+Plain-English findings on sales page,sales,should,no,yes,X1 from fixes.md: learning curve + reports hard work
+Data checks (maths consistency),clean,should,no,yes,X2: errors hard to trace + trust in numbers
+Excel workbook download,report,should,no,yes,X3: people stay in Excel; handover
+Next-step links on every page,ui,should,no,yes,X4: phone navigation
+Speed and limits stated on upload,ingest,could,no,yes,X5: measured 200k rows ~2s
+Session-only notice and failed-upload clarity,ingest,could,no,yes,X6: bugs.md to-check items

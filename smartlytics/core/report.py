@@ -10,6 +10,8 @@ import plotly.graph_objects as go
 import plotly.io as pio
 from plotly.offline import get_plotlyjs
 
+from smartlytics.core import checks as checks_mod
+from smartlytics.core import findings as findings_mod
 from smartlytics.core import profile, sales
 from smartlytics.core.audit import AuditEntry
 
@@ -88,6 +90,9 @@ def build_html(
         parts.append("<section><h2>Sales performance</h2><div class='grid'>" + "".join(
             f"<div class='card'><div class='l'>{esc(a)}</div><div class='v'>{esc(b)}</div></div>" for a, b in sc
         ) + "</div>")
+        facts = findings_mod.findings(result)
+        if facts:
+            parts.append("<h3>What stands out</h3><ul>" + "".join(f"<li>{esc(f)}</li>" for f in facts) + "</ul>")
         parts.append(f"<p class='muted'>Rows are rated on {esc(result.metric.replace('_', ' '))}: "
                      "Low below the 25th percentile, High at or above the 75th, Medium between.</p>")
         for w in result.warnings:
@@ -98,6 +103,11 @@ def build_html(
         top = sales.top_performers(result, 20)
         parts.append("<h3>Top 20 rows</h3>" + _table(top.drop(columns=["tier"])))
         parts.append("</section>")
+        found = checks_mod.run_checks(result.df, result.mapping)
+        if found:
+            parts.append("<section><h2>Data checks</h2><p class='muted'>Rows that don't add up. "
+                         "Nothing was changed; these are for a person to judge.</p>"
+                         + _table(checks_mod.summary(found)) + "</section>")
 
     if charts:
         parts.append("<section><h2>Charts</h2>")

@@ -3,7 +3,7 @@ import streamlit as st
 
 from smartlytics.core import customers, io, profile
 from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import money, require_data
+from smartlytics.ui.widgets import money, next_steps, require_data
 
 s = require_data()
 df = s.result.df if s.result is not None else s.df
@@ -60,3 +60,4 @@ with right:
         st.dataframe(table.head(n), hide_index=True, use_container_width=True)
         st.download_button("Download all repeat customers (CSV)", lambda: io.to_csv_bytes(table), "repeat_customers.csv",
                            mime="text/csv", key="dl_repeat", icon=":material/download:")
+next_steps("pages/customers.py")

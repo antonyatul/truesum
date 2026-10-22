@@ -64,12 +64,18 @@ def unify_case(df: pd.DataFrame, max_distinct: int = 50) -> tuple[pd.DataFrame, 
         if kind != "category":
             continue
         s = out[col]
-        if s.nunique(dropna=True) > max_distinct:
+        counts = s.dropna().astype(str).value_counts()
+        if len(counts) > max_distinct or len(counts) == 0:
             continue
-        text = s.dropna().astype(str)
-        canonical = text.groupby(text.str.casefold()).agg(lambda v: v.value_counts().index[0])
-        mapped = s.map(lambda v, c=canonical: c.get(str(v).casefold(), v) if pd.notna(v) else v)
-        fixed += _changed(s, mapped)
+        # most common spelling wins within each case-insensitive group (works on uniques, not rows)
+        canonical: dict[str, str] = {}
+        for value in counts.index:  # value_counts is sorted most common first
+            canonical.setdefault(value.casefold(), value)
+        mapping = {v: canonical[v.casefold()] for v in counts.index if canonical[v.casefold()] != v}
+        if not mapping:
+            continue
+        mapped = s.where(~s.astype(str).isin(mapping.keys()), s.astype(str).map(mapping))
+        fixed += int(s.astype(str).isin(mapping.keys()).sum())
         out[col] = mapped
     return out, AuditEntry("unify_case", f"Merged {fixed:,} labels that only differed by capitalisation", len(df), len(out))
 
@@ -85,6 +91,9 @@ def coerce_numeric(df: pd.DataFrame, threshold: float = 0.95) -> tuple[pd.DataFr
         present = s.dropna()
         if present.empty:
             continue
+        probe = present.sample(min(len(present), 2000), random_state=0) if len(present) > 2000 else present
+        if pd.to_numeric(probe.astype(str).str.replace(_CURRENCY, "", regex=True), errors="coerce").notna().mean() < threshold:
+            continue  # clearly not a number column; skip the full pass
         nums = pd.to_numeric(present.astype(str).str.replace(_CURRENCY, "", regex=True), errors="coerce")
         if nums.notna().mean() >= threshold:
             full = pd.to_numeric(s.astype(str).str.replace(_CURRENCY, "", regex=True), errors="coerce")

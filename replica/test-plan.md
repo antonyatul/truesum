@@ -17,7 +17,7 @@ Payments, email and OAuth don't exist in v1, so their negative cases are out of 
 | F01-E4 | Windows-1252 file with £ and accents | reads without error, £ intact | U |
 | F01-E5 | emoji and accents in headers and values | kept, escaped in report HTML | U |
 | F01-E6 | 60-character column name | displayed, cleaned to snake_case, no crash | U, A |
-| F01-E7 | over 500,000 rows | friendly row-limit error | U |
+| F01-E7 | over 250,000 rows | friendly row-limit error | U |
 | F01-E8 | wrong extension (.pdf) | "Upload a .csv or .xlsx file." | U |
 | F01-E9 | corrupt .xlsx | friendly "couldn't read" error, no traceback | U |
 | F01-E10 | upload a second file | everything from the first file is reset | A |

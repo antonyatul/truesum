@@ -110,7 +110,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-01-17,Speaker,Audio,5,33.34,83.1,0,415.5,415.5,C1002,Midlands
 2024-01-17,Keyboard,Accessories,2,13.65,45.6,10,91.2,82.08,C1282,London
 2024-01-17,Webcam,Accessories,1,20.53,57.86,0,57.86,57.86,C1148,London
-2024-01-17,Keyboard,Accessories,2,,46.42,0,92.84,92.84,C1001,London
+2024-01-17,Keyboard,Accessories,2,,46.42,0,928.4,92.84,C1001,London
 2024-01-17,Headphones,Audio,2,28.22,74.34,0,148.68,148.68,C1013,North England
 2024-01-18,Speaker,Audio,1,34.43,84.38,0,84.38,84.38,C1004,Wales
 2024-01-18,Monitor,Electronics,10,92.89,196.84,15,1968.4,1673.14,C1068,Wales
@@ -178,7 +178,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-01-27,Tablet,Electronics,5,190.32,334.35,0,1671.75,1671.75,C1068,Wales
 2024-01-27,Tablet,Electronics,2,186.11,319.01,10,638.02,574.22,C1150,Wales
 2024-01-27,USB-C Hub,Accessories,2,10.19,39.29,0,78.58,78.58,C1581,Wales
-2024-01-27,Webcam,Accessories,1,21.48,60.1,20,60.1,48.08,C1039,North England
+2024-01-27,Webcam,Accessories,1,21.48,60.1,20,601.0,48.08,C1039,North England
 2024-01-27,Headphones,Audio,1,27.19,75.29,0,75.29,75.29,C1017,North England
 2024-01-27,Headphones,Audio,2,28.59,77.28,0,154.56,154.56,C1001,London
 2024-01-28,Mouse,Accessories,5,5.06,19.24,0,96.2,96.2,C1591,London
@@ -216,7 +216,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-02-03,Mouse,Accessories,1,5.83,18.18,0,18.18,18.18,C1162,Wales
 2024-02-03,Monitor,Electronics,1,97.19,183.68,15,183.68,156.13,C1006,North England
 2024-02-03,USB-C Hub,Accessories,1,11.2,38.53,5,38.53,36.6,C1003,Wales
-2024-02-03,Speaker,Audio,2,34.09,95.03,15,190.06,161.55,C1099,London
+2024-02-03,Speaker,Audio,2,34.09,95.03,15,1900.6,161.55,C1099,London
 2024-02-03,Mouse,Accessories,2,5.57,18.79,0,37.58,37.58,C1239,London
 2024-02-03,Speaker,Audio,10,31.6,89.38,10,893.8,804.42,C1412,North England
 2024-02-03,Keyboard,Accessories,10,14.33,40.73,0,407.3,407.3,C1004,North England
@@ -271,7 +271,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-02-10,Tablet,Electronics,1,171.93,321.76,20,321.76,257.41,C1745,Scotland
 2024-02-10,Notebook Pack,Office,5,2.22,8.48,0,42.4,42.4,C1016,Midlands
 2024-02-11,Notebook Pack,Office,2,2.28,8.67,15,17.34,14.74,C1108,South West
-2024-02-11,Monitor,Electronics,4,91.66,183.26,0,733.04,733.04,C1162,North England
+2024-02-11,Monitor,Electronics,4,91.66,183.26,0,7330.4,733.04,C1162,North England
 2024-02-11,Monitor,Electronics,1,96.94,192.61,0,192.61,192.61,C1001,Scotland
 2024-02-11,Headphones,Audio,2,26.98,76.36,0,152.72,152.72,C1126,Wales
 2024-02-11,Monitor,Electronics,10,95.58,191.22,0,1912.2,1912.2,C1740,North England
@@ -693,7 +693,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-04-12,Notebook Pack,Office,3,2.25,9.13,20,27.39,21.91,C1052,London
 2024-04-12,Notebook Pack,Office,1,2.02,8.78,0,8.78,8.78,C1185,Midlands
 2024-04-12,Webcam,Accessories,3,20.71,58.11,5,174.33,165.61,C1002,  scotland 
-2024-04-12,Desk Lamp,Office,1,9.17,30.53,15,30.53,25.95,C1135,Scotland
+2024-04-12,Desk Lamp,Office,1,9.17,30.53,15,305.3,25.95,C1135,Scotland
 2024-04-12,Tablet,Electronics,3,174.4,346.7,5,1040.1,988.09,C1020,London
 2024-04-12,Notebook Pack,Office,1,2.13,8.5,0,8.5,8.5,C1018,London
 2024-04-12,Notebook Pack,Office,1,2.09,8.65,0,8.65,8.65,C1481,Midlands
@@ -933,7 +933,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-05-16,Headphones,Audio,1,29.35,79.5,0,79.5,79.5,C1001,Midlands
 2024-05-16,Notebook Pack,Office,1,2.01,8.47,5,8.47,8.05,C1130,North England
 2024-05-16,Monitor,Electronics,4,90.58,193.01,10,772.04,694.84,C1066,Wales
-2024-05-16,Keyboard,Accessories,2,14.34,43.41,0,86.82,86.82,C1023,South West
+2024-05-16,Keyboard,Accessories,2,14.34,43.41,0,868.2,86.82,C1023,South West
 2024-05-17,Keyboard,Accessories,5,14.01,44.13,15,220.65,187.55,C1763,North England
 2024-05-17,Keyboard,Accessories,8,13.12,45.71,15,365.68,310.83,C1016,London
 2024-05-17,Tablet,Electronics,1,177.88,347.05,20,347.05,277.64,C1066,London
@@ -1036,7 +1036,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-05-31,Desk Lamp,Office,4,8.74,28.54,0,114.16,114.16,C1207,Midlands
 2024-05-31,Tablet,Electronics,2,174.96,325.07,15,650.14,552.62,C1649,South West
 2024-05-31,Headphones,Audio,1,27.51,78.5,5,78.5,74.58,C1047,London
-2024-05-31,Mouse,Accessories,2,4.97,19.89,15,39.78,33.81,C1002,North England
+2024-05-31,Mouse,Accessories,2,4.97,19.89,15,397.8,33.81,C1002,North England
 2024-05-31,Mouse,Accessories,2,5.71,18.59,0,37.18,37.18,C1015,North England
 2024-05-31,Headphones,Audio,2,27.59,73.71,0,147.42,147.42,C1002,Wales
 2024-05-31,Headphones,Audio,2,28.08,75.43,0,150.86,150.86,C1001,Scotland
@@ -1109,7 +1109,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-06-10,Mouse,Accessories,4,5.37,18.67,15,74.68,63.48,C1048,Wales
 2024-06-10,Webcam,Accessories,3,20.21,59.38,0,178.14,178.14,C1001,North England
 2024-06-11,Mouse,Accessories,2,5.93,19.52,20,39.04,31.23,C1150,South West
-2024-06-11,Headphones,Audio,1,28.42,80.35,5,80.35,76.33,C1005,Midlands
+2024-06-11,Headphones,Audio,1,28.42,80.35,5,803.5,76.33,C1005,Midlands
 2024-06-11,Mouse,Accessories,4,5.59,18.64,0,74.56,74.56,C1006,London
 2024-06-11,Headphones,Audio,2,29.23,75.34,10,150.68,135.61,C1042,Scotland
 2024-06-11,Speaker,Audio,4,34.71,88.43,0,353.72,353.72,C1280,Midlands
@@ -1532,7 +1532,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-08-11,Speaker,Audio,2,34.24,88.88,0,177.76,177.76,C1066,South West
 2024-08-11,Notebook Pack,Office,5,2.06,8.7,10,43.5,39.15,C1141,South West
 2024-08-11,Mouse,Accessories,1,5.62,18.77,10,18.77,16.89,C1044,South West
-2024-08-11,Webcam,Accessories,8,19.44,58.35,0,466.8,466.8,C1001,Midlands
+2024-08-11,Webcam,Accessories,8,19.44,58.35,0,4668.0,466.8,C1001,Midlands
 2024-08-11,Mouse,Accessories,1,5.55,19.2,20,19.2,15.36,C1383,South West
 2024-08-11,Keyboard,Accessories,10,14.11,44.94,0,449.4,449.4,C1533,North England
 2024-08-12,,Electronics,3,180.9,323.46,0,970.38,970.38,C1016,Wales
@@ -1592,7 +1592,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-08-21,Mouse,Accessories,2,5.69,18.46,5,36.92,35.07,C1018,London
 2024-08-21,USB-C Hub,Accessories,1,10.48,37.92,15,37.92,32.23,C1001,London
 2024-08-21,Webcam,Accessories,1,20.89,60.57,0,60.57,60.57,C1009,North England
-2024-08-21,Monitor,Electronics,1,94.09,182.94,10,182.94,164.65,C1235,Midlands
+2024-08-21,Monitor,Electronics,1,94.09,182.94,10,1829.4,164.65,C1235,Midlands
 2024-08-21,Headphones,Audio,8,28.61,77.27,0,618.16,618.16,C1005,North England
 2024-08-21,Headphones,Audio,8,27.31,75.53,0,604.24,604.24,C1125,Wales
 2024-08-22,Mouse,Accessories,4,5.2,18.46,15,73.84,62.76,C1001,Midlands
@@ -1684,7 +1684,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-09-02,USB-C Hub,Accessories,2,11.17,38.43,0,76.86,76.86,C1002,London
 2024-09-02,Keyboard,Accessories,5,14.21,44.44,0,222.2,222.2,C1260,South West
 2024-09-03,Mouse,Accessories,1,5.28,19.33,5,19.33,18.36,C1616,North England
-2024-09-03,USB-C Hub,Accessories,8,11.22,37.82,15,302.56,257.18,C1142,London
+2024-09-03,USB-C Hub,Accessories,8,11.22,37.82,15,3025.6,257.18,C1142,London
 2024-09-03,Keyboard,Accessories,5,14.76,47.07,5,235.35,223.58,C1605,London
 2024-09-03,Mouse,Accessories,4,5.55,20.21,10,80.84,72.76,C1001,South West
 2024-09-03,Mouse,Accessories,4,5.55,20.21,10,80.84,72.76,C1001,South West
@@ -2031,7 +2031,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-10-22,Monitor,Electronics,5,,191.19,5,955.95,908.15,C1004,South West
 2024-10-22,Mouse,Accessories,8,5.38,18.83,0,150.64,150.64,C1002,Wales
 2024-10-22,USB-C Hub,Accessories,1,10.99,39.64,5,39.64,37.66,C1100,South West
-2024-10-22,Monitor,Electronics,8,95.77,198.97,5,1591.76,1512.17,C1001,Scotland
+2024-10-22,Monitor,Electronics,8,95.77,198.97,5,15917.6,1512.17,C1001,Scotland
 2024-10-23,Tablet,Electronics,2,164.87,343.59,0,687.18,687.18,C1325,South West
 2024-10-23,Desk Lamp,Office,1,9.25,28.93,10,28.93,26.04,C1183,Scotland
 2024-10-23,Mouse,Accessories,1,5.64,19.72,15,19.72,16.76,C1073,Scotland
@@ -2282,7 +2282,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-11-26,Desk Lamp,Office,1,9.07,29.33,10,29.33,26.4,C1589,North England
 2024-11-26,Mouse,Accessories,4,5.56,18.53,0,74.12,74.12,C1019,Scotland
 2024-11-26,Webcam,Accessories,2,20.24,58.7,5,117.4,111.53,C1697,Wales
-2024-11-26,Monitor,Electronics,1,98.99,190.17,5,190.17,180.66,C1410,London
+2024-11-26,Monitor,Electronics,1,98.99,190.17,5,1901.7,180.66,C1410,London
 2024-11-26,Tablet,Electronics,5,187.56,335.71,0,1678.55,1678.55,C1006,North England
 2024-11-26,Desk Lamp,Office,10,9.36,28.32,15,283.2,240.72,C1039,Scotland
 2024-11-26,Keyboard,Accessories,5,14.39,46.76,5,233.8,222.11,C1265,Midlands
@@ -2399,7 +2399,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2024-12-13,Keyboard,Accessories,8,14.15,44.34,5,354.72,336.98,C1294,Scotland
 2024-12-13,Desk Lamp,Office,10,8.68,28.59,20,285.9,228.72,C1018,London
 2024-12-13,Monitor,Electronics,10,92.71,186.14,0,1861.4,1861.4,C1008,Wales
-2024-12-13,Notebook Pack,Office,10,2.25,8.94,20,89.4,71.52,C1001,South West
+2024-12-13,Notebook Pack,Office,10,2.25,8.94,20,894.0,71.52,C1001,South West
 2024-12-13,Speaker,Audio,2,36.1,90.07,0,180.14,180.14,C1136,London
 2024-12-14,Desk Lamp,Office,1,9.36,28.18,0,28.18,28.18,C1017,Scotland
 2024-12-14,Office Chair,Office,1,85.63,212.78,5,212.78,202.14,C1387,London
@@ -3125,7 +3125,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-03-30,Keyboard,Accessories,8,13.58,45.34,0,362.72,362.72,C1166,Scotland
 2025-03-30,Webcam,Accessories,2,,61.89,10,123.78,111.4,C1016,London
 2025-03-30,Headphones,Audio,2,29.84,75.37,15,150.74,128.13,C1083,South West
-2025-03-30,Desk Lamp,Office,1,8.88,29.61,15,29.61,25.17,C1024,Scotland
+2025-03-30,Desk Lamp,Office,1,8.88,29.61,15,296.1,25.17,C1024,Scotland
 2025-03-30,Mouse,Accessories,5,5.48,19.02,0,95.1,95.1,C1077,North England
 2025-03-30,Keyboard,Accessories,8,13.63,46.0,5,368.0,349.6,C1104,North England
 2025-03-30,Monitor,Electronics,3,96.59,196.06,20,588.18,470.54,C1026,Scotland
@@ -3283,7 +3283,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-04-23,USB-C Hub,Accessories,10,10.73,39.55,0,395.5,395.5,C1006,London
 2025-04-23,Tablet,Electronics,1,190.37,340.67,20,340.67,272.54,C1002,North England
 2025-04-23,Keyboard,Accessories,2,13.62,43.71,10,87.42,78.68,C1014,Wales
-2025-04-23,Monitor,Electronics,8,86.75,186.33,0,1490.64,1490.64,C1014,London
+2025-04-23,Monitor,Electronics,8,86.75,186.33,0,14906.4,1490.64,C1014,London
 2025-04-24,Mouse,Accessories,5,5.55,19.32,20,96.6,77.28,C1431,Midlands
 2025-04-24,Speaker,Audio,5,32.39,87.88,15,439.4,373.49,C1794,North England
 2025-04-24,Speaker,Audio,2,32.68,89.64,0,179.28,179.28,C1015,Midlands
@@ -3351,7 +3351,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-05-03,Mouse,Accessories,8,5.43,18.24,0,145.92,145.92,C1707,London
 2025-05-03,Webcam,Accessories,1,21.09,59.81,10,59.81,53.83,C1155,London
 2025-05-03,Headphones,Audio,8,26.78,80.45,0,643.6,643.6,C1121,Scotland
-2025-05-03,Keyboard,Accessories,4,13.23,46.43,15,185.72,157.86,C1015,Midlands
+2025-05-03,Keyboard,Accessories,4,13.23,46.43,15,1857.2,157.86,C1015,Midlands
 2025-05-03,Speaker,Audio,8,31.27,89.48,0,715.84,715.84,C1083,Scotland
 2025-05-03,Speaker,Audio,1,34.94,87.7,10,87.7,78.93,C1073,Scotland
 2025-05-03,Notebook Pack,Office,1,2.15,8.49,0,8.49,8.49,C1053,London
@@ -3454,7 +3454,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-05-17,Tablet,Electronics,1,179.5,317.96,10,317.96,286.16,C1127,London
 2025-05-17,Mouse,Accessories,1,5.28,19.57,5,19.57,18.59,C1001,London
 2025-05-18,Keyboard,Accessories,2,13.26,46.22,0,92.44,92.44,C1098,London
-2025-05-18,Webcam,Accessories,10,19.41,56.6,0,566.0,566.0,C1521,North England
+2025-05-18,Webcam,Accessories,10,19.41,56.6,0,5660.0,566.0,C1521,North England
 2025-05-18,Mouse,Accessories,1,5.4,18.21,0,18.21,18.21,C1014,London
 2025-05-18,Mouse,Accessories,4,5.16,19.06,0,76.24,76.24,C1184,London
 2025-05-19,Tablet,Electronics,4,178.96,319.64,5,1278.56,1214.63,C1243,London
@@ -3744,7 +3744,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-06-27,Headphones,Audio,2,27.11,78.27,0,156.54,156.54,C1066,Scotland
 2025-06-27,Headphones,Audio,8,25.95,76.78,10,614.24,552.82,C1213,Wales
 2025-06-27,,Accessories,1,13.58,48.1,15,48.1,40.88,C1037,London
-2025-06-28,USB-C Hub,Accessories,10,11.49,39.77,15,397.7,338.04,C1602,Midlands
+2025-06-28,USB-C Hub,Accessories,10,11.49,39.77,15,3977.0,338.04,C1602,Midlands
 2025-06-28,Mouse,Accessories,2,5.17,19.29,20,38.58,30.86,C1014,London
 2025-06-28,Notebook Pack,Office,1,2.23,8.86,20,8.86,7.09,C1009,Scotland
 2025-06-28,USB-C Hub,Accessories,2,10.86,39.93,0,79.86,79.86,C1067,North England
@@ -4144,7 +4144,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-08-25,USB-C Hub,Accessories,8,11.34,41.93,0,335.44,335.44,C1682,Midlands
 2025-08-26,Tablet,Electronics,5,177.44,320.78,0,1603.9,1603.9,C1348,London
 2025-08-26,Speaker,Audio,10,33.82,87.01,5,870.1,826.6,C1003,North England
-2025-08-26,Monitor,Electronics,10,91.84,181.24,5,1812.4,1721.78,C1138,London
+2025-08-26,Monitor,Electronics,10,91.84,181.24,5,18124.0,1721.78,C1138,London
 2025-08-26,Monitor,Electronics,8,90.37,190.22,0,1521.76,1521.76,C1008,North England
 2025-08-26,Mouse,Accessories,1,5.13,19.13,20,19.13,15.3,C1001,Scotland
 2025-08-26,Keyboard,Accessories,2,14.11,43.72,0,87.44,87.44,C1312,Midlands
@@ -4390,7 +4390,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-10-01,Keyboard,Accessories,2,14.18,47.06,0,94.12,94.12,C1086,South West
 2025-10-01,Notebook Pack,Office,1,2.21,8.03,0,8.03,8.03,C1003,Wales
 2025-10-01,Mouse,Accessories,1,5.58,18.48,15,18.48,15.71,C1002,Scotland
-2025-10-01,Keyboard,Accessories,2,14.4,44.3,0,88.6,88.6,C1674,South West
+2025-10-01,Keyboard,Accessories,2,14.4,44.3,0,886.0,88.6,C1674,South West
 2025-10-01,Headphones,Audio,2,28.73,79.79,20,159.58,127.66,C1019,South West
 2025-10-01,Tablet,Electronics,10,185.84,316.22,5,3162.2,3004.09,C1009,London
 2025-10-01,Mouse,Accessories,1,5.52,18.72,10,18.72,16.85,C1005,North England
@@ -4506,7 +4506,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-10-17,Keyboard,Accessories,8,14.6,42.35,0,338.8,338.8,C1003,Scotland
 2025-10-17,Laptop,Electronics,4,588.99,913.04,0,3652.16,3652.16,C1051,London
 2025-10-17,Speaker,Audio,3,33.69,87.64,10,262.92,236.63,C1005,London
-2025-10-17,Headphones,Audio,4,24.44,80.39,15,321.56,273.33,C1096,Midlands
+2025-10-17,Headphones,Audio,4,24.44,80.39,15,3215.6,273.33,C1096,Midlands
 2025-10-17,Speaker,Audio,5,33.07,86.99,0,434.95,434.95,C1041,London
 2025-10-18,Tablet,Electronics,1,157.78,327.02,20,327.02,261.62,C1013,South West
 2025-10-18,Speaker,Audio,1,33.3,92.21,10,92.21,82.99,C1063,London
@@ -4585,7 +4585,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-10-26,Keyboard,Accessories,4,15.04,44.51,10,178.04,160.24,C1013,London
 2025-10-27,Mouse,Accessories,4,5.58,19.63,20,78.52,62.82,C1156,South West
 2025-10-27,Webcam,Accessories,1,20.29,59.9,0,59.9,59.9,C1028,London
-2025-10-27,Notebook Pack,Office,10,2.13,8.56,10,85.6,77.04,C1084,Scotland
+2025-10-27,Notebook Pack,Office,10,2.13,8.56,10,856.0,77.04,C1084,Scotland
 2025-10-27,Monitor,Electronics,1,97.0,185.87,20,185.87,148.7,C1002,North England
 2025-10-27,Mouse,Accessories,2,5.87,18.79,0,37.58,37.58,C1191,Scotland
 2025-10-27,Tablet,Electronics,10,173.76,328.62,0,3286.2,3286.2,C1008,North England
@@ -4791,7 +4791,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-11-22,Monitor,Electronics,1,93.75,198.3,0,198.3,198.3,C1021,South West
 2025-11-23,Monitor,Electronics,2,93.61,188.2,10,376.4,338.76,C1001,Wales
 2025-11-23,Headphones,Audio,2,25.55,81.29,0,162.58,162.58,C1056,South West
-2025-11-23,Laptop,Electronics,2,537.78,853.83,10,1707.66,1536.89,C1011,North England
+2025-11-23,Laptop,Electronics,2,537.78,853.83,10,17076.6,1536.89,C1011,North England
 2025-11-23,USB-C Hub,Accessories,1,10.4,38.99,10,38.99,35.09,C1130,London
 2025-11-24,Notebook Pack,Office,1,2.07,8.79,0,8.79,8.79,C1403,London
 2025-11-24,Tablet,Electronics,1,186.84,333.41,10,333.41,300.07,C1047,Scotland
@@ -4870,7 +4870,7 @@ Order Date,Product,Category,Quantity,Unit Cost,Unit Price,Discount %,Gross Sales
 2025-12-06,Keyboard,Accessories,4,13.77,46.31,0,185.24,185.24,C1641,North England
 2025-12-06,USB-C Hub,Accessories,8,11.26,39.93,20,319.44,255.55,C1258,London
 2025-12-07,Headphones,Audio,2,28.7,81.09,15,162.18,137.85,C1129,South West
-2025-12-07,Headphones,Audio,8,27.12,82.28,10,658.24,592.42,C1013,Midlands
+2025-12-07,Headphones,Audio,8,27.12,82.28,10,6582.4,592.42,C1013,Midlands
 2025-12-07,Mouse,Accessories,10,5.31,17.9,10,179.0,161.1,C1005,Midlands
 2025-12-07,Keyboard,Accessories,2,13.63,46.88,15,93.76,79.7,C1286,London
 2025-12-07,Notebook Pack,Office,10,2.25,9.17,0,91.7,91.7,C1031,Wales

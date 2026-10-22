@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 
 MAX_BYTES = 50 * 1024 * 1024
-MAX_ROWS = 500_000
+MAX_ROWS = 250_000  # free hosting has ~1 GB shared by all visitors; each session keeps up to 3 copies
 SAMPLE_PATH = Path(__file__).resolve().parents[2] / "sample_data" / "sales_sample.csv"
 
 

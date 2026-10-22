@@ -18,7 +18,7 @@ lives in their own session and is gone when they close the tab.
 ### Security checklist (v1)
 
 - [x] **Secrets:** none exist. `.env*` and `.streamlit/secrets.toml` are git-ignored; `.env.example` lists v2 names with no values.
-- [x] **Input validation:** every upload goes through `core.io.read_table`: 50 MB cap (also enforced by Streamlit's `maxUploadSize`), 500,000-row cap, CSV/XLSX only, encoding and delimiter detection, friendly errors.
+- [x] **Input validation:** every upload goes through `core.io.read_table`: 50 MB cap (also enforced by Streamlit's `maxUploadSize`), 250,000-row cap, CSV/XLSX only, encoding and delimiter detection, friendly errors.
 - [x] **Malicious spreadsheets:** `defusedxml` is installed, so openpyxl parses .xlsx XML safely (no entity expansion or external entities). Verified `openpyxl.DEFUSEDXML is True`.
 - [x] **HTML injection:** every user-supplied string rendered as HTML (dataset name, column names, values in the report) goes through `html.escape`; Streamlit markdown elsewhere doesn't render raw HTML.
 - [x] **Authorisation:** n/a in v1 (no shared data). For v2 see below — tested.

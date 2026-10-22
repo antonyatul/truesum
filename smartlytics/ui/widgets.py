@@ -53,6 +53,28 @@ def table_config(df: pd.DataFrame) -> dict:
     return cfg
 
 
+PAGE_FLOW = [("pages/home.py", "Upload", ":material/upload_file:"),
+             ("pages/overview.py", "Overview & clean", ":material/table_chart:"),
+             ("pages/sales.py", "Sales performance", ":material/trending_up:"),
+             ("pages/customers.py", "Customers", ":material/groups:"),
+             ("pages/charts.py", "Chart builder", ":material/bar_chart:"),
+             ("pages/report.py", "Report & export", ":material/description:")]
+
+
+def next_steps(current: str) -> None:
+    """Previous / next page links at the foot of a page (phones rarely need the sidebar)."""
+    paths = [p for p, _, _ in PAGE_FLOW]
+    i = paths.index(current)
+    st.divider()
+    left, right = st.columns(2)
+    if i > 0:
+        p, label, _ = PAGE_FLOW[i - 1]
+        left.page_link(p, label=f"Back: {label}", icon=":material/arrow_back:")
+    if i < len(PAGE_FLOW) - 1:
+        p, label, icon = PAGE_FLOW[i + 1]
+        right.page_link(p, label=f"Next: {label}", icon=":material/arrow_forward:")
+
+
 def money(v: float) -> str:
     return "—" if pd.isna(v) else f"{v:,.2f}"
 

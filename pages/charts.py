@@ -4,7 +4,7 @@ import streamlit as st
 from smartlytics.core import charts, profile
 from smartlytics.core.charts import ChartError, ChartSpec
 from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import chart_style, require_data, show_chart
+from smartlytics.ui.widgets import chart_style, next_steps, require_data, show_chart
 
 s = require_data()
 df = s.result.df if s.result is not None else s.df
@@ -68,12 +68,15 @@ elif kind == "correlation":
     spec = ChartSpec("correlation")
 
 if spec is None:
+    next_steps("pages/charts.py")
     st.stop()
 
 try:
     built = charts.build(df, spec, chart_style())
 except ChartError as err:
     ui.empty_state("Can't draw this chart", str(err))
+    next_steps("pages/charts.py")
     st.stop()
 
 show_chart(built, f"builder_{spec.kind}")
+next_steps("pages/charts.py")

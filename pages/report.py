@@ -3,9 +3,9 @@ import re
 
 import streamlit as st
 
-from smartlytics.core import io, report, sales
+from smartlytics.core import io, report, sales, workbook
 from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import require_data
+from smartlytics.ui.widgets import next_steps, require_data
 
 s = require_data()
 st.title("Report & export")
@@ -34,7 +34,7 @@ include_sales = st.toggle("Include sales performance", value=s.result is not Non
                           if s.result is None else None)
 
 slug = re.sub(r"[^a-z0-9]+", "-", (s.name or "data").lower().rsplit(".", 1)[0]).strip("-") or "data"
-a, b, c = st.columns(3)
+a, b, c, d = st.columns(4)
 with a:
     name, df, audit, result, saved = s.name or "Your data", s.df, list(s.audit), s.result if include_sales else None, list(s.charts)
     st.download_button("Report (HTML)", lambda: report.build_html(name, df, audit, result, saved),
@@ -53,3 +53,11 @@ with c:
         st.download_button("Data with profit and tiers (CSV)", lambda: io.to_csv_bytes(tiered), f"{slug}-tiers.csv",
                            mime="text/csv", key="dl_tiers", icon=":material/workspace_premium:", use_container_width=True)
         st.caption(f"{len(sales.top_performers(s.result)):,} High-tier rows inside.")
+with d:
+    wb_result = s.result if include_sales else None
+    st.download_button("Excel workbook (.xlsx)", lambda: workbook.build_workbook(name, df, audit, wb_result),
+                       f"{slug}-results.xlsx",
+                       mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                       key="dl_xlsx", icon=":material/grid_on:", use_container_width=True)
+    st.caption("Summary, tiers, top performers, data checks and cleaning steps, ready for Excel.")
+next_steps("pages/report.py")
