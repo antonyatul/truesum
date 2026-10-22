@@ -1,0 +1,65 @@
+# Keeps https://truesum.streamlit.app awake on Streamlit Community Cloud.
+# Community Cloud sleeps apps after 12 hours without visitors, and a sleeping
+# app only wakes when someone clicks "Yes, get this app back up!".
+# This job visits the app every 6 hours in a headless browser and clicks that
+# button if the app is asleep.
+#
+# Put this file at: .github/workflows/keep-awake.yml
+
+name: Keep Truesum awake
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours, at :17 past (UTC)
+  workflow_dispatch:          # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: read
+
+jobs:
+  visit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      APP_URL: https://truesum.streamlit.app/
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Visit the app and wake it if asleep
+        shell: python
+        run: |
+          import os, sys
+          from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
+
+          url = os.environ["APP_URL"]
+          with sync_playwright() as p:
+              browser = p.chromium.launch()
+              page = browser.new_page()
+              page.goto(url, wait_until="domcontentloaded", timeout=60_000)
+
+              wake = page.get_by_role("button", name="Yes, get this app back up")
+              try:
+                  wake.wait_for(state="visible", timeout=15_000)
+              except PWTimeout:
+                  print("App is awake (no sleep page).")
+              else:
+                  print("App was asleep: clicking the wake button.")
+                  wake.click()
+                  try:
+                      wake.wait_for(state="hidden", timeout=90_000)
+                  except PWTimeout:
+                      print("Wake button is still showing after 90 s.", file=sys.stderr)
+                      browser.close()
+                      sys.exit(1)
+                  print("Wake requested; the app is starting.")
+
+              # Stay a little so the visit registers as traffic.
+              page.wait_for_timeout(20_000)
+              browser.close()
