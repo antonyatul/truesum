@@ -50,6 +50,19 @@ COMPONENT_CSS = """
   outline-offset: 2px;
 }
 
+/* primary buttons: Streamlit draws light text on the accent (~2:1); use on-accent (9.1:1) */
+button[kind="primary"], button[kind="primaryFormSubmit"],
+[data-testid="stBaseButton-primary"], [data-testid="stBaseButton-primaryFormSubmit"] {
+  color: var(--color-on-accent) !important;
+}
+button[kind="primary"] *, button[kind="primaryFormSubmit"] *,
+[data-testid="stBaseButton-primary"] *, [data-testid="stBaseButton-primaryFormSubmit"] * {
+  color: var(--color-on-accent) !important;
+}
+
+/* section headings are h2 (st.header) but sized like subheadings */
+[data-testid="stHeading"] h2 { font-size: var(--text-lg); line-height: var(--leading-lg); padding-top: var(--space-4); }
+
 /* page header */
 .sl-hero {
   background: linear-gradient(135deg, var(--color-hero-from), var(--color-hero-via), var(--color-hero-to));

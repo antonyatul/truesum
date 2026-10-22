@@ -10,7 +10,7 @@ from smartlytics.ui.widgets import require_data
 s = require_data()
 st.title("Report & export")
 
-st.subheader("Charts in your report")
+st.header("Charts in your report")
 if not s.charts:
     ui.empty_state("No charts in your report yet",
                    "Use “Add to report” under any chart on the Sales or Chart builder pages.")
@@ -28,7 +28,7 @@ else:
             s.charts.pop(i)
             st.rerun()
 
-st.subheader("Download")
+st.header("Download")
 include_sales = st.toggle("Include sales performance", value=s.result is not None, disabled=s.result is None,
                           key="inc_sales", help="Run the analysis on the Sales performance page first."
                           if s.result is None else None)

@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - run: python replica/design/contrast.py replica/design/tokens.json
+      - run: pytest tests/unit tests/app -q
+
+  browser:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt && playwright install --with-deps chromium
+      - run: npm i --no-save axe-core@4
+      - name: Start app
+        run: |
+          streamlit run app.py --server.headless true --server.port 8601 > app.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf localhost:8601/_stcore/health && break; sleep 1; done
+      - run: python tests/e2e/flow.py http://localhost:8601 /tmp/shots
+      - run: python tests/e2e/uploads.py http://localhost:8601
+      - run: AXE_JS=node_modules/axe-core/axe.min.js python tests/e2e/a11y.py http://localhost:8601
+      - name: No server errors
+        run: "! grep -iE 'traceback|error' app.log"
+
+  database:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGUSER: postgres
+      PGPASSWORD: postgres
+    steps:
+      - uses: actions/checkout@v4
+      - run: tests/db/run.sh

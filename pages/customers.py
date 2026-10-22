@@ -40,7 +40,7 @@ with k[3]:
 
 left, right = st.columns(2, gap="large")
 with left:
-    st.subheader("Top customers")
+    st.header("Top customers")
     if amount is None:
         ui.empty_state("No amount column", "Top customers need a column with numbers, such as revenue.")
     else:
@@ -53,7 +53,7 @@ with left:
             st.caption(f"Your best customer, {top.iloc[0]['customer']}, accounts for {money(top.iloc[0]['total'])} "
                        f"({top.iloc[0]['share_pct']:.2f}% of all {amount}).")
 with right:
-    st.subheader("Repeat customers")
+    st.header("Repeat customers")
     if table.empty:
         ui.empty_state("No repeat customers", "Every customer appears only once in this data.")
     else:

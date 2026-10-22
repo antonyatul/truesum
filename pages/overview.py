@@ -23,7 +23,7 @@ with c[3]:
     ui.metric("Duplicate rows", f"{ov['duplicate_rows']:,}")
 
 # ---- cleaning ---------------------------------------------------------------
-st.subheader("Clean")
+st.header("Clean")
 left, right = st.columns([3, 2], gap="large")
 with left:
     st.write(
@@ -91,7 +91,7 @@ with st.expander("Fine-tune: missing values and negative rows", icon=":material/
         st.rerun()
 
 # ---- explore ----------------------------------------------------------------
-st.subheader("Explore")
+st.header("Explore")
 t1, t2, t3, t4, t5 = st.tabs(["Summary", "Number columns", "Text and date columns", "Missing values", "Data"])
 with t1:
     for line in profile.text_summary(df):

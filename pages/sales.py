@@ -88,7 +88,7 @@ with cards[3]:
 for w in r.warnings:
     st.warning(w, icon=":material/info:")
 
-st.subheader("Performance tiers")
+st.header("Performance tiers")
 label = r.metric.replace("_", " ")
 st.markdown(
     f"Every row is rated on **{label}** against the rest of your data: "
@@ -117,7 +117,7 @@ with right:
 if r.metric == "profit":
     show_chart(charts.sales_vs_profit(r, style), "sales_vs_profit")
 
-st.subheader("Where the money comes from")
+st.header("Where the money comes from")
 dims = [c for c in profile.columns_of(r.df, "category") if c != "tier" and r.df[c].nunique() <= 200]
 if dims:
     default = r.mapping.product if r.mapping.product in dims else dims[0]
@@ -128,7 +128,7 @@ if dims:
 else:
     st.caption("No text columns with 200 or fewer values to break down by.")
 
-st.subheader("Top performers")
+st.header("Top performers")
 top = sales.top_performers(r)
 st.caption(f"{len(top):,} High-tier rows, best first. Showing up to 500.")
 show = top.head(500).copy()

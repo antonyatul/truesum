@@ -11,7 +11,7 @@ ui.hero("Smartlytics", "Turn a sales spreadsheet into profit tiers, charts and a
 
 left, right = st.columns([3, 2], gap="large")
 with left:
-    st.subheader("Start with your data")
+    st.header("Start with your data")
     upload = st.file_uploader(
         "Upload a CSV or Excel file",
         type=["csv", "xlsx"],
@@ -36,7 +36,7 @@ with left:
         st.toast("Loaded the sample data", icon=":material/check_circle:")
 
 with right:
-    st.subheader("What you get")
+    st.header("What you get")
     st.markdown(
         "- **Clean data**: tidy headers, merged labels, duplicates removed, every step logged\n"
         "- **Profit tiers**: each sale rated High, Medium or Low against your own data\n"
@@ -46,7 +46,7 @@ with right:
 
 if s.has_data:
     st.divider()
-    st.subheader(f"Preview · {s.name}")
+    st.header(f"Preview · {s.name}")
     st.caption(f"{len(s.df):,} rows · {s.df.shape[1]} columns. First 20 rows shown.")
     st.dataframe(s.df.head(20), hide_index=True, use_container_width=True, column_config=table_config(s.df))
     a, b, _ = st.columns([1, 1, 2])
