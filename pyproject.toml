@@ -1,0 +1,16 @@
+[project]
+name = "smartlytics"
+version = "0.1.0"
+description = "Sales analytics: clean a spreadsheet, rate every sale by profit, chart it and share a report."
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error::FutureWarning", "error::DeprecationWarning:pandas.*"]
