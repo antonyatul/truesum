@@ -3,9 +3,9 @@ import re
 
 import streamlit as st
 
-from smartlytics.core import io, report, sales, workbook
-from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import next_steps, require_data
+from truesum.core import io, report, sales, workbook
+from truesum.ui import components as ui
+from truesum.ui.widgets import next_steps, require_data
 
 s = require_data()
 st.title("Report & export")

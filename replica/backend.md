@@ -27,7 +27,7 @@ lives in their own session and is gone when they close the tab.
 - [x] **No user data in URLs or logs:** pages have fixed URLs; the app logs nothing about data. Streamlit usage stats are off (`gatherUsageStats = false`).
 - [x] **XSRF / CORS:** left at Streamlit's secure defaults. (The old Hub's dev container turned both off; not carried over.)
 - [x] **Dependencies audited:** `pip-audit -r requirements.txt` → no known vulnerabilities (2026-10-22).
-- [ ] **Privacy notice:** short in-app line exists ("stays in this browser session, nothing is stored"); a full page listing the host as processor is a launch task.
+- [ ] **Privacy notice:** short in-app line exists ("used in memory for this visit only. Nothing is saved."); a full page listing the host as processor is a launch task.
 - [ ] **CSV formula injection:** exports contain the user's own data back to them; cells starting with `=` are not neutralised. Low risk in v1, revisit when files are shared between users in v2.
 
 ## v2: accounts and saved datasets (designed, not built)

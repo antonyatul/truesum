@@ -3,7 +3,7 @@
 # Usage: PGHOST=... PGPORT=... PGUSER=postgres tests/db/run.sh
 set -euo pipefail
 cd "$(dirname "$0")/../.."
-db="smartlytics_rls_$$"
+db="truesum_rls_$$"
 psql -qtA -c "create database $db" >/dev/null
 trap 'psql -qtA -c "drop database if exists $db" >/dev/null' EXIT
 psql -d "$db" -q -v ON_ERROR_STOP=1 \

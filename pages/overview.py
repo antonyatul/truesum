@@ -2,9 +2,9 @@
 import pandas as pd
 import streamlit as st
 
-from smartlytics.core import checks, cleaning, io, profile, sales
-from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import next_steps, require_data, table_config
+from truesum.core import checks, cleaning, io, profile, sales
+from truesum.ui import components as ui
+from truesum.ui.widgets import next_steps, require_data, table_config
 
 s = require_data()
 df = s.df
@@ -101,7 +101,7 @@ else:
     if not found:
         st.caption("No columns here that the checks know how to test.")
     elif not problems:
-        st.success(f"All {len(found)} checks passed.", icon=":material/verified:")
+        st.success(f"All {len(found)} checks passed. The numbers add up.", icon=":material/verified:")
     else:
         st.write(f"{len(problems)} of {len(found)} checks found rows worth a look. Nothing has been changed; "
                  "these are for you to judge.")

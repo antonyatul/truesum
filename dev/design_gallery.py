@@ -9,12 +9,12 @@ import pandas as pd  # noqa: E402
 import plotly.express as px  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from smartlytics.ui import components as ui  # noqa: E402
-from smartlytics.ui.theme import chart_colors, color  # noqa: E402
+from truesum.ui import components as ui  # noqa: E402
+from truesum.ui.theme import chart_colors, color  # noqa: E402
 
-st.set_page_config(page_title="Design gallery · Smartlytics", page_icon="assets/favicon.png", layout="wide")
+st.set_page_config(page_title="Design gallery · Truesum", page_icon="assets/favicon.png", layout="wide")
 ui.inject_theme()
-ui.hero("Smartlytics", "Sales analytics you can explain to your boss.")
+ui.hero("Truesum", "Your sales spreadsheet, explained in plain English.")
 
 st.subheader("Metric cards")
 c = st.columns(4)
@@ -43,7 +43,7 @@ i[0].selectbox("Revenue column", ["revenue", "sales"], key="g_sel", help="Numeri
 i[1].selectbox("Date column", [], key="g_sel_empty", disabled=True, placeholder="No date columns found")
 i[2].toggle("Cost is per unit", value=True, key="g_toggle")
 st.file_uploader("Upload a CSV or Excel file", type=["csv", "xlsx"], key="g_up",
-                 help="Your file stays in this browser session and is never stored.")
+                 help="Your file is used in memory for this visit only. Nothing is saved.")
 
 st.subheader("Alerts")
 st.success("Cleaned: 100,000 → 99,612 rows (388 duplicates removed).")

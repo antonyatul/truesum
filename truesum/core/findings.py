@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from smartlytics.core.sales import SalesResult
+from truesum.core.sales import SalesResult
 
 
 def _pct(part: float, whole: float) -> float:

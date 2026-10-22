@@ -1,0 +1,8 @@
+{
+  "name": "Truesum",
+  "tagline": "Your sales spreadsheet, explained in plain English.",
+  "avoid": ["Smartlytics", "Smartlytics Hub", "Smart Data Analytics Suite", "Smart Data Analytcs Suite"],
+  "domains": [],
+  "colors": [],
+  "notes": "The two source apps are the user's own, so their colours are kept on purpose; only the old names are swept. 'Smartlytics' also belongs to Smartlytics Consultancy Ltd (Coventry), which is why it must not survive."
+}

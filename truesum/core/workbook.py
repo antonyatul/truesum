@@ -7,10 +7,10 @@ import pandas as pd
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
-from smartlytics.core import checks as checks_mod
-from smartlytics.core import findings as findings_mod
-from smartlytics.core import sales
-from smartlytics.core.audit import AuditEntry
+from truesum.core import checks as checks_mod
+from truesum.core import findings as findings_mod
+from truesum.core import sales
+from truesum.core.audit import AuditEntry
 
 DATA_SHEET_MAX = 25_000   # writing cells is ~5k rows/s; bigger data goes in the CSV download
 FLAGGED_MAX = 1_000

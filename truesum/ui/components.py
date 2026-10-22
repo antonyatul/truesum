@@ -8,7 +8,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from smartlytics.ui.theme import full_css
+from truesum.ui.theme import full_css
 
 LOGO_PATH = Path(__file__).resolve().parents[2] / "assets" / "logo.png"
 

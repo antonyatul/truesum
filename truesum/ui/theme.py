@@ -1,6 +1,6 @@
 """Design tokens -> CSS. tokens.json is the single source of truth.
 
-`python -m smartlytics.ui.theme` regenerates replica/design/tokens.css.
+`python -m truesum.ui.theme` regenerates replica/design/tokens.css.
 """
 from __future__ import annotations
 

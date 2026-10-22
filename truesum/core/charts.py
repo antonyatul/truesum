@@ -9,7 +9,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-from smartlytics.core.sales import SalesResult, Thresholds
+from truesum.core.sales import SalesResult, Thresholds
 
 ChartKind = Literal["histogram", "bar", "pie", "scatter", "correlation", "trend"]
 SCATTER_MAX = 5000

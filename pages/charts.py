@@ -1,10 +1,10 @@
 """S04 Chart builder."""
 import streamlit as st
 
-from smartlytics.core import charts, profile
-from smartlytics.core.charts import ChartError, ChartSpec
-from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import chart_style, next_steps, require_data, show_chart
+from truesum.core import charts, profile
+from truesum.core.charts import ChartError, ChartSpec
+from truesum.ui import components as ui
+from truesum.ui.widgets import chart_style, next_steps, require_data, show_chart
 
 s = require_data()
 df = s.result.df if s.result is not None else s.df

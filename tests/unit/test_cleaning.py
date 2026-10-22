@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from smartlytics.core import cleaning, profile
+from truesum.core import cleaning, profile
 
 
 def test_F02_H1_recommended_clean_on_sample(sample_raw):

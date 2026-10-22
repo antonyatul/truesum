@@ -6,8 +6,8 @@ from typing import Literal
 
 import pandas as pd
 
-from smartlytics.core.audit import AuditEntry
-from smartlytics.core.profile import column_types
+from truesum.core.audit import AuditEntry
+from truesum.core.profile import column_types
 
 FillMethod = Literal["leave", "drop_rows", "median", "mean", "mode", "zero", "unknown"]
 _CURRENCY = re.compile(r"[£$€,\s]")

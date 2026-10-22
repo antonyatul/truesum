@@ -1,9 +1,9 @@
 """Customers: top spenders and repeat buyers (split out of the Hub's dashboard, fixes B5)."""
 import streamlit as st
 
-from smartlytics.core import customers, io, profile
-from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import money, next_steps, require_data
+from truesum.core import customers, io, profile
+from truesum.ui import components as ui
+from truesum.ui.widgets import money, next_steps, require_data
 
 s = require_data()
 df = s.result.df if s.result is not None else s.df

@@ -1,13 +1,15 @@
 import io as _io
+import os
 from pathlib import Path
 
 import pandas as pd
 import pytest
 
-from smartlytics.core import cleaning, io, sales
+from truesum.core import cleaning, io, sales
 
 ROOT = Path(__file__).resolve().parents[1]
-ORIGINAL_100K = Path("/home/claude/smart-data-analytics-tool/Smart_Data_Analytcs_Suite/raw_data/big_sales_data.csv")
+# Optional regression file: the 100,000-row dataset from the earlier CLI tool. Set REGRESSION_CSV to its path.
+ORIGINAL_100K = Path(os.environ.get("REGRESSION_CSV", "/nonexistent"))
 
 
 @pytest.fixture(scope="session")

@@ -7,7 +7,7 @@ from datetime import datetime
 
 import pandas as pd
 
-from smartlytics.core.sales import SalesMapping
+from truesum.core.sales import SalesMapping
 
 TOLERANCE = 0.02  # money: allow 2p rounding
 EXTRA_SYNONYMS = {

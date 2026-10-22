@@ -1,11 +1,11 @@
-"""Smartlytics entry point: streamlit run app.py"""
+"""Truesum entry point: streamlit run app.py"""
 import streamlit as st
 
-from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import sidebar_status
+from truesum.ui import components as ui
+from truesum.ui.widgets import sidebar_status
 
 st.set_page_config(
-    page_title="Smartlytics",
+    page_title="Truesum",
     page_icon="assets/favicon.png",
     layout="wide",
     initial_sidebar_state="auto",

@@ -7,8 +7,8 @@ import pandas as pd
 import pytest
 from streamlit.testing.v1 import AppTest
 
-from smartlytics.core import io
-from smartlytics.ui.state import AppState
+from truesum.core import io
+from truesum.ui.state import AppState
 
 TIMEOUT = 60
 APP = str(Path(__file__).resolve().parents[2] / "app.py")
@@ -22,7 +22,7 @@ def app() -> AppTest:
 
 
 def state(at: AppTest) -> AppState:
-    return at.session_state["smartlytics"]
+    return at.session_state["truesum"]
 
 
 def go(at: AppTest, page: str) -> AppTest:

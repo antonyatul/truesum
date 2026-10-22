@@ -4,10 +4,10 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from smartlytics.core import charts, customers, profile, report
-from smartlytics.core.audit import AuditEntry
-from smartlytics.core.charts import ChartError, ChartSpec
 from tests.conftest import tiny_sales
+from truesum.core import charts, customers, profile, report
+from truesum.core.audit import AuditEntry
+from truesum.core.charts import ChartError, ChartSpec
 
 
 # ---- customers ---------------------------------------------------------------

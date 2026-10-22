@@ -1,9 +1,9 @@
 """S07 Sales performance: column mapping, profit, tiers, top performers."""
 import streamlit as st
 
-from smartlytics.core import charts, findings, io, profile, sales
-from smartlytics.ui import components as ui
-from smartlytics.ui.widgets import chart_style, money, next_steps, require_data, show_chart, table_config
+from truesum.core import charts, findings, io, profile, sales
+from truesum.ui import components as ui
+from truesum.ui.widgets import chart_style, money, next_steps, require_data, show_chart, table_config
 
 s = require_data()
 df = s.df

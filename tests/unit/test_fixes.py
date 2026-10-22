@@ -6,8 +6,8 @@ import openpyxl
 import pandas as pd
 import pytest
 
-from smartlytics.core import checks, findings, sales, workbook
-from smartlytics.core.audit import AuditEntry
+from truesum.core import checks, findings, sales, workbook
+from truesum.core.audit import AuditEntry
 
 
 # ---- X2 data checks -----------------------------------------------------------

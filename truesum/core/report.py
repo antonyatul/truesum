@@ -10,10 +10,10 @@ import plotly.graph_objects as go
 import plotly.io as pio
 from plotly.offline import get_plotlyjs
 
-from smartlytics.core import checks as checks_mod
-from smartlytics.core import findings as findings_mod
-from smartlytics.core import profile, sales
-from smartlytics.core.audit import AuditEntry
+from truesum.core import checks as checks_mod
+from truesum.core import findings as findings_mod
+from truesum.core import profile, sales
+from truesum.core.audit import AuditEntry
 
 
 @dataclass
@@ -71,9 +71,9 @@ def build_html(
     ov = profile.overview(df)
     parts = [f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
              f"<meta name='viewport' content='width=device-width,initial-scale=1'>"
-             f"<title>{esc(dataset_name)} · Smartlytics report</title><style>{CSS}</style>"
+             f"<title>{esc(dataset_name)} · Truesum report</title><style>{CSS}</style>"
              f"<script>{get_plotlyjs()}</script></head><body><main>",
-             f"<header><h1>{esc(dataset_name)}</h1><p>Smartlytics report · generated {now}</p></header>"]
+             f"<header><h1>{esc(dataset_name)}</h1><p>Truesum report · generated {now}</p></header>"]
 
     cards = [("Rows", f"{ov['rows']:,}"), ("Columns", f"{ov['columns']}"),
              ("Missing cells", f"{ov['missing_pct']:.1f}%"), ("Duplicate rows", f"{ov['duplicate_rows']:,}")]
@@ -127,5 +127,5 @@ def build_html(
             f"<li>{esc(e.message)} <span class='muted'>({esc(e.meta())})</span></li>" for e in audit
         ) + "</ol></section>")
 
-    parts.append("<footer>Made with Smartlytics</footer></main></body></html>")
+    parts.append("<footer>Made with Truesum</footer></main></body></html>")
     return "".join(parts).encode("utf-8")

@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from smartlytics.core import cleaning, io, sales
 from tests.conftest import ORIGINAL_100K, tiny_sales
+from truesum.core import cleaning, io, sales
 
 
 def test_F06_H1_guess_mapping_on_sample(sample_clean):

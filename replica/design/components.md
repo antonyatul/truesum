@@ -37,7 +37,7 @@ Font: system sans stack with Inter first (OFL), no licensed fonts.
 **File uploader**
 - accepts: .csv, .xlsx (fixes "Excel rejected" from F01)
 - states: idle, file chosen, reading (spinner), success (toast), error (inline `st.error` with what went wrong and what to do), too large (>50 MB) — Streamlit blocks it with its own message
-- helper text: privacy line ("Your file stays in this browser session and is never stored")
+- helper text: privacy line ("Your file is used in memory for this visit only. Nothing is saved.") — processing happens on the server, in memory, never on disk
 - used on: S01
 
 **Demo data button**

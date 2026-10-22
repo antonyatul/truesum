@@ -4,11 +4,11 @@ from __future__ import annotations
 import pandas as pd
 import streamlit as st
 
-from smartlytics.core.charts import Built, Style
-from smartlytics.core.report import SavedChart
-from smartlytics.ui import components as ui
-from smartlytics.ui import state
-from smartlytics.ui.theme import chart_colors, color
+from truesum.core.charts import Built, Style
+from truesum.core.report import SavedChart
+from truesum.ui import components as ui
+from truesum.ui import state
+from truesum.ui.theme import chart_colors, color
 
 
 def chart_style() -> Style:
@@ -19,7 +19,7 @@ def chart_style() -> Style:
 def require_data() -> state.AppState:
     s = state.get()
     if not s.has_data:
-        ui.empty_state("No data loaded yet", "Upload a spreadsheet or try the sample sales data to get started.")
+        ui.empty_state("No data loaded yet", "Add a sales file, or try the sample data, and this page fills in.")
         st.page_link("pages/home.py", label="Go to Upload", icon=":material/upload_file:")
         st.stop()
     return s
@@ -88,4 +88,4 @@ def sidebar_status() -> None:
             st.caption(f"{len(s.df):,} rows · {s.df.shape[1]} columns · {'cleaned' if s.cleaned else 'not cleaned yet'}")
             if s.charts:
                 st.caption(f"{len(s.charts)} chart(s) in report")
-        st.caption("Your data stays in this browser session. Nothing is stored.")
+        st.caption("Your file is used in memory for this visit only. Nothing is saved.")

@@ -7,11 +7,11 @@ from datetime import UTC, datetime
 import pandas as pd
 import streamlit as st
 
-from smartlytics.core.audit import AuditEntry
-from smartlytics.core.report import SavedChart
-from smartlytics.core.sales import SalesMapping, SalesResult
+from truesum.core.audit import AuditEntry
+from truesum.core.report import SavedChart
+from truesum.core.sales import SalesMapping, SalesResult
 
-_KEY = "smartlytics"
+_KEY = "truesum"
 
 
 @dataclass

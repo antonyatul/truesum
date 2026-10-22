@@ -3,7 +3,7 @@ import io as _io
 import pandas as pd
 import pytest
 
-from smartlytics.core import io
+from truesum.core import io
 
 
 def test_F01_H1_sample_loads(sample_raw):

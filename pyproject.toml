@@ -1,5 +1,5 @@
 [project]
-name = "smartlytics"
+name = "truesum"
 version = "0.1.0"
 description = "Sales analytics: clean a spreadsheet, rate every sale by profit, chart it and share a report."
 requires-python = ">=3.11"
@@ -14,3 +14,6 @@ select = ["E", "F", "W", "I", "B", "UP"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 filterwarnings = ["error::FutureWarning", "error::DeprecationWarning:pandas.*"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/make_brand_assets.py" = ["E501"]  # inline SVG markup
