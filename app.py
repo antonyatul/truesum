@@ -24,6 +24,7 @@ pages = {
     ],
     "Share": [
         st.Page("pages/report.py", title="Report & export", icon=":material/description:"),
+        st.Page("pages/about.py", title="Privacy & about", icon=":material/info:"),
     ],
 }
 

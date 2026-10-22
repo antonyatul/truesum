@@ -1,0 +1,21 @@
+{
+  "avoid_from": "replica/brand.json",
+  "listings": {
+    "product_hunt": {
+      "name": {"text": "Truesum", "max": 40},
+      "tagline": {"text": "Your sales spreadsheet, explained in plain English", "max": 60},
+      "description": {"text": "Upload a sales CSV or Excel file. Truesum checks the maths (quantity × price, discounts, missing costs), rates every sale High, Medium or Low on profit, says what stands out in plain sentences, and hands back an Excel workbook. Free, open source, nothing kept.", "max": 260}
+    },
+    "streamlit_community": {
+      "title": {"text": "Truesum: sales spreadsheets in plain English", "max": 80},
+      "summary": {"text": "Checks the maths in a sales file, rates every sale on profit and hands the answers back as an Excel workbook. Built with Streamlit, pandas and Plotly; 100+ tests.", "max": 200}
+    },
+    "github_repo": {
+      "description": {"text": "Your sales spreadsheet, explained in plain English: data checks, profit tiers, findings and an Excel workbook. Streamlit + pandas.", "max": 350},
+      "topics": {"text": "streamlit pandas plotly data-analysis data-quality sales-analytics small-business python", "max": 200}
+    },
+    "show_hn": {
+      "title": {"text": "Show HN: Truesum – checks the maths in a sales spreadsheet and explains it", "max": 80}
+    }
+  }
+}
