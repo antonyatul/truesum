@@ -1,0 +1,23 @@
+# Streamlit theme = the "Tailwind mapping" for this stack.
+# Values mirror replica/design/tokens.json; change both together.
+
+[theme]
+base = "dark"
+primaryColor = "#22C3EE"              # accent
+backgroundColor = "#0B1220"           # bg
+secondaryBackgroundColor = "#121B2E"  # surface
+textColor = "#E7ECF5"                 # text
+borderColor = "#26324D"               # border
+font = "sans-serif"
+baseRadius = "10px"                   # radius.md
+chartCategoricalColors = ["#22C3EE", "#8EF0A0", "#A78BFA", "#FBBF24", "#F472B6", "#60A5FA", "#F87171", "#94A3B8"]
+
+[server]
+maxUploadSize = 50                    # MB, see architecture "parts that bite"
+runOnSave = false
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
