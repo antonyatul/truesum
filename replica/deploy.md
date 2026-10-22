@@ -43,7 +43,7 @@ By hand:
 | # | who | step |
 | --- | --- | --- |
 | 1 | Atul or Claude | Create the **public** repo `antonyatul/truesum` (empty, no README). Claude can do this through the connected GitHub account once you say go. |
-| 2 | Claude | Push `main` (13 commits so far, with history). CI starts on the push. |
+| 2 | Claude | Push `main` with its full history. CI starts on the push. |
 | 3 | Atul | Go to **share.streamlit.io** → *Create app* → *Deploy a public app from GitHub* → repo `antonyatul/truesum`, branch `main`, main file `app.py`. |
 | 4 | Atul | *Advanced settings* → Python **3.12**. No secrets needed. Pick the subdomain, e.g. `truesum.streamlit.app`. Deploy. |
 | 5 | Claude | Run the browser flow against the live URL, then put the URL into the README hero and push. |

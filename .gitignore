@@ -9,3 +9,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# third-party review excerpts: private research only, not for redistribution
+replica/reviews.csv

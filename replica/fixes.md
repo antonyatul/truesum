@@ -4,8 +4,9 @@
 UK Business Forums ×11, Hacker News ×8, AccountingWEB ×2, Indie Hackers ×1),
 dated 2011–2026; 59 are from the last 18 months. Products discussed: Excel (61),
 Power BI (22), a forecasting app and an AI spreadsheet tool (9).
-Every row is linked in `replica/reviews.csv`; excerpts there are verbatim and under
-15 words, with a paraphrase alongside. Ranking: `replica/feedback.md`.
+Every comment is linked, with a paraphrase, in `replica/feedback.md` (ranking and sources).
+The verbatim excerpts (`replica/reviews.csv`) are kept locally as private research and not
+published, since the review sites' terms limit redistribution.
 
 **Limits of this sample, plainly:** these are general Excel and Power BI users, not
 specifically small sales teams, and Capterra reviews skew 5★ (complaints are in
